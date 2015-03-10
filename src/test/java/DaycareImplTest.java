@@ -9,6 +9,7 @@ import com.mycompany.assignment3.Interface.DaycareInterface;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -19,9 +20,9 @@ import org.junit.Test;
  *
  * @author 211150142
  */
-public class DaycareTest {
+public class DaycareImplTest {
     
-    public DaycareTest() {
+    public DaycareImplTest() {
     }
     
     @BeforeClass
@@ -51,7 +52,11 @@ public class DaycareTest {
         DaycareInterface daycare = new DaycareServiceImpl();               
         System.out.println(daycare.students());
         
-        //String studentSearch = daycare.students().
+        List temp = daycare.students();
+        String searchName = temp.get(2).toString();
+        System.out.println(searchName);
+        
+         assertEquals("Peter Pan",searchName);
     }
     @Test
     public void displayRooms()
